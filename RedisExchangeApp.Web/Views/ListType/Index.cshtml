@@ -1,0 +1,26 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>List Type</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <form asp-action="Add" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="text" class="form-control" name="name" />
+                <button type="submit" class="btn btn-success mt-1">Add Name</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
