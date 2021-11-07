@@ -1,0 +1,26 @@
+﻿@model SortedSet<string>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1>SortedSet Type</h1>
+    <br />
+    <div class="row">
+        <div class="col-4">
+            <form asp-action="Add" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="text" class="form-control" name="name" placeholder="name"/>
+                <input type="number" class="form-control" name="score"  placeholder="score"/>
+                <button type="submit" class="btn btn-success mt-1">Add</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">@item</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
