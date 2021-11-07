@@ -1,0 +1,28 @@
+﻿@model Dictionary<string,string>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h1>Hash Type</h1>
+    <br />
+    <div class="row">
+        <div class="col-4">
+            <form asp-action="Add" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="text" class="form-control" name="key" placeholder="key" />
+                <input type="text" class="form-control" name="value" placeholder="value" />
+
+                <button type="submit" class="btn btn-success mt-1">Add</button>
+            </form>
+        </div>
+        <div class="col-6">
+            <ul class="list-group">
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">@item.Key - @item.Value.</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
